@@ -28,4 +28,8 @@ def home(request):
         restaurants.append(restaurant)
     print(restaurants)
 
-    return render(request, 'DJEats/home.html')
+    context = {
+        'restaurants': restaurants
+    }
+
+    return render(request, 'DJEats/home.html', context)
