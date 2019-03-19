@@ -13,10 +13,17 @@ def home(request):
     }
     response = requests.get(url.format(latitude, longitude), headers=header).json()
 
-    restaurant: {
-        'name': response['nearby_restaurants'][0]['restaurant']['name'],
-    }
+    restaurant_array = response['nearby_restaurants']
+    length = len(restaurant_array)
 
-    print(restaurant.get('name'))
+    for i in range(0, length):
+        restaurant_obj = restaurant_array[i]['restaurant']
+        restaurant = {
+            'id': restaurant_obj['id'],
+            'name': restaurant_obj['name'],
+            'locality': restaurant_obj['location']['locality'],
+            'image': restaurant_obj['featured_image']
+        }
+    print(restaurant)
 
     return render(request, 'DJEats/home.html')
