@@ -6,14 +6,19 @@
 </head>
 <body>
 <h1>DJEats Home Page</h1>
-{% for restaurant in restaurants %}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src={{ restaurant.image }} alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{ restaurant.name }}</h5>
-    <p class="card-text">{{ restaurant.locality }}</p>
-  </div>
+
+<div class="row">
+    {% for restaurant in restaurants %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src={{ restaurant.image }} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ restaurant.name }}</h5>
+                <p class="card-text">{{ restaurant.locality }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 </body>
 </html>
