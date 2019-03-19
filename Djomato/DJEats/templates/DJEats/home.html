@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>DJEats Home Page</h1>
+<h1>DJEats Home Page</h1>
+{% for restaurant in restaurants %}
+<h2>{{ restaurant.name }}</h2>
+<p>{{ restaurant.locality }}</p>
+{% endfor %}
 </body>
 </html>
