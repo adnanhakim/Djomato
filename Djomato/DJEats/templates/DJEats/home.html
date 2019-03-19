@@ -7,8 +7,13 @@
 <body>
 <h1>DJEats Home Page</h1>
 {% for restaurant in restaurants %}
-<h2>{{ restaurant.name }}</h2>
-<p>{{ restaurant.locality }}</p>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ restaurant.name }}</h5>
+    <p class="card-text">{{ restaurant.locality }}</p>
+  </div>
+</div>
 {% endfor %}
 </body>
 </html>

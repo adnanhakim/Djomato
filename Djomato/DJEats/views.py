@@ -26,7 +26,6 @@ def home(request):
             'image': restaurant_obj['featured_image']
         }
         restaurants.append(restaurant)
-    print(restaurants)
 
     context = {
         'restaurants': restaurants
