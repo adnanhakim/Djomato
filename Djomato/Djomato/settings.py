@@ -70,6 +70,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Djomato.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': {
+        'rest_framework.permissions.TokenAuthentication'
+    }
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
