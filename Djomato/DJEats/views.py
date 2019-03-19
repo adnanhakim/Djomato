@@ -16,6 +16,7 @@ def home(request):
     restaurant_array = response['nearby_restaurants']
     length = len(restaurant_array)
 
+    restaurants = []
     for i in range(0, length):
         restaurant_obj = restaurant_array[i]['restaurant']
         restaurant = {
@@ -24,6 +25,7 @@ def home(request):
             'locality': restaurant_obj['location']['locality'],
             'image': restaurant_obj['featured_image']
         }
-    print(restaurant)
+        restaurants.append(restaurant)
+    print(restaurants)
 
     return render(request, 'DJEats/home.html')
