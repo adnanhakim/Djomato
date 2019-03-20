@@ -24,7 +24,8 @@ def home(request):
             'id': restaurant_obj['id'],
             'name': restaurant_obj['name'],
             'locality': restaurant_obj['location']['locality'],
-            'image': restaurant_obj['featured_image']
+            'image': restaurant_obj['featured_image'],
+            'cost': restaurant_obj['currency'] + str(restaurant_obj['average_cost_for_two'])
         }
         restaurants.append(restaurant)
 
