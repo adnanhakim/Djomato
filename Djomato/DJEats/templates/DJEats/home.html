@@ -10,8 +10,12 @@
                 <h6 class="card-subtitle mb-2 text-muted">{{ restaurant.locality }}</h6>
             </div>
             <div class="card-footer text-muted text-right">
-                <p class="card-text text-left">{{ restaurant.cost }} for two<a href="#" class="btn btn-info text-right">See
-                    Details</a></p>
+                <div class="row">
+                    <div class="divCell" align="left">{{ restaurant.cost }} for two</div>
+                    <div class="divCell">&emsp;</div>
+                    <div class="divCell" align="right"><a href="#" class="btn btn-info text-right">See
+                        Details</a></div>
+                </div>
             </div>
         </div>
     </div>
