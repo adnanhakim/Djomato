@@ -13,6 +13,7 @@ def home(request):
     }
     response = requests.get(url.format(latitude, longitude), headers=header).json()
 
+    location = response['location']['title']
     restaurant_array = response['nearby_restaurants']
     length = len(restaurant_array)
 
@@ -28,7 +29,12 @@ def home(request):
         restaurants.append(restaurant)
 
     context = {
+        'location': location,
         'restaurants': restaurants
     }
 
     return render(request, 'DJEats/home.html', context)
+
+
+def details(request):
+    return render(request, 'DJEats/details.html')

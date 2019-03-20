@@ -1,29 +1,17 @@
-{% extends 'base.html' %}
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
+{% extends "DJEats/base.html" %}
 {% block content %}
-<h1>DJEats Home Page</h1>
-
 <div class="row">
     {% for restaurant in restaurants %}
     <div class="col">
-        <div class="card" style="width: 18rem;">
+        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
             <img class="card-img-top" src={{ restaurant.image }} alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ restaurant.name }}</h5>
                 <p class="card-text">{{ restaurant.locality }}</p>
+                <a href="#" class="btn btn-info">See Details</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-{% endblock %}
-
-</body>
-</html>
+{% endblock content %}
