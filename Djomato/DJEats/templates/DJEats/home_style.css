@@ -1,8 +1,22 @@
-.cost-for-two
+body
 {
-    float: left
+    background-color: #efefef !important;
 }
-.see-details
+.single-blog
 {
-    float: right
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2); 
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+.blog-meta
+{
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.single-blog span
+{
+    float: right;
+    font-size: 12px;
+    color: cornflowerblue;
 }

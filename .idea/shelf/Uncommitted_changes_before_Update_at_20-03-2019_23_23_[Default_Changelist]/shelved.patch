@@ -1,0 +1,34 @@
+Index: Djomato/DJEats/templates/DJEats/home.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"DJEats/base.html\" %}\r\n{% block content %}\r\n<div class=\"row\">\r\n    {% for restaurant in restaurants %}\r\n    <div class=\"col\">\r\n        <div class=\"card text-white bg-dark mb-3\" style=\"width: 18rem;\">\r\n            <img class=\"card-img-top\" src={{ restaurant.image }} alt=\"Card image cap\" style=\"width: 18rem;\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">{{ restaurant.name }}</h5>\r\n                <h6 class=\"card-subtitle mb-2 text-muted\">{{ restaurant.locality }}</h6>\r\n            </div>\r\n            <div class=\"card-footer text-muted text-right\">\r\n                <div class=\"row\">\r\n                    <div class=\"divCell\" align=\"left\">{{ restaurant.cost }} for two</div>\r\n                    <div class=\"divCell\">&emsp;</div>\r\n                    <div class=\"divCell\" align=\"right\"><a href=\"#\" class=\"btn btn-info text-right\">See\r\n                        Details</a></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    {% endfor %}\r\n</div>\r\n{% endblock content %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Djomato/DJEats/templates/DJEats/home.html	(revision b6af969e560f2e4b662761f61629a7c2856f48e3)
++++ Djomato/DJEats/templates/DJEats/home.html	(date 1553101985701)
+@@ -10,15 +10,14 @@
+                 <h6 class="card-subtitle mb-2 text-muted">{{ restaurant.locality }}</h6>
+             </div>
+             <div class="card-footer text-muted text-right">
+-                <div class="row">
+-                    <div class="divCell" align="left">{{ restaurant.cost }} for two</div>
+-                    <div class="divCell">&emsp;</div>
+-                    <div class="divCell" align="right"><a href="#" class="btn btn-info text-right">See
+-                        Details</a></div>
+-                </div>
+-            </div>
+-        </div>
+-    </div>
+-    {% endfor %}
++                <div class="container"/>
++                <p>{{ restaurant.cost }} for two</p>
++                <a href="#" class="btn btn-info text-right">See
++                    Details</a>
++            </div>
++        </div>
++    </div>
++</div>
++{% endfor %}
+ </div>
+ {% endblock content %}
