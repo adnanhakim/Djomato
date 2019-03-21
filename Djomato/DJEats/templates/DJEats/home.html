@@ -1,24 +1,33 @@
 {% extends "DJEats/base.html" %}
 {% block content %}
-<link href="home_style.css">
-
 <div class="row">
-
     {% for restaurant in restaurants %}
-    <div class="col">
-        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-            <img class="card-img-top" src={{ restaurant.image }} alt="Card image cap" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{ restaurant.name }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ restaurant.locality }}</h6>
+    <section>
+            <div class="container py-3">
+              <div class="card">
+                <div class="row ">
+                  <div class="col-md-4">
+                      <img src={{restaurant.image}} class="w-70">
+                    </div>
+                    <div class="col-md-8 px-3">
+                      <div class="card-block px-3">
+                        <h4 class="card-title">{{ restaurant.name }}</h4>
+                        <p class="card-text">{{ restaurant.locality  }}</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                      </div>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-footer text-muted text-right">
-                <p class="cost-for-two float-left">{{ restaurant.cost }} for two <a href="#" class="btn btn-info text-right">See
-                        Details</a></p>
-            </div>
-        </div>
-    </div>
+          </section>
     {% endfor %}
+
+    
 
 </div>
 {% endblock content %}
+
+<style>
+</style>
