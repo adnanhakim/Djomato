@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a7d570a-12d0-4a3f-a2fe-31548d5cc425" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" afterDir="false" />
     </list>
     <ignored path="C:\Users\Adnan Hakim\PycharmProjects\Djomato\.idea\shelf/" />
@@ -35,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+            <state relative-caret-position="255">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -52,11 +53,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state relative-caret-position="272">
+              <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -103,11 +104,11 @@
         <option value="$PROJECT_DIR$/Djomato/Djomato/settings.py" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/details.html" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/urls.py" />
-        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/views.py" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/jupyter.ipynb" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home_style.css" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" />
+        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" />
       </list>
     </option>
   </component>
@@ -357,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553166547036</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Card design">
+      <created>1553169267052</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1553169267052</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -402,7 +410,8 @@
     <MESSAGE value="Footer(2)" />
     <MESSAGE value="Footer(3)" />
     <MESSAGE value="Footer(4)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer(4)" />
+    <MESSAGE value="Card design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Card design" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hello.py" />
@@ -480,20 +489,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        <state relative-caret-position="255">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
         </state>
       </provider>
     </entry>
