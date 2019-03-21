@@ -4,7 +4,8 @@
     {% for restaurant in restaurants %}
     <div class="col">
         <div class="container py-3">
-            <div class="card p-2 bg-dark text-white" style="width: 25rem;">
+            <div class="card bg-dark text-white" style="width: 25rem;">
+                <div class="card-header mb-0"><p class="text-muted float-right"> {{ restaurant.cost }} for two</p></div>
                 <div class="row ">
                     <div class="col-md-4">
                         <img src={{restaurant.image}} class="rounded">
@@ -13,13 +14,32 @@
                         <div class="card-block">
                             <h4 class="card-title mb-1 text-white">{{ restaurant.name }}</h4>
                             <p class="card-subtitle text-muted">{{ restaurant.locality }}</p>
-                            <a href="#" class="btn btn-primary my-2">See Details</a>
+
                         </div>
                     </div>
+                </div>
+                <div class="card-footer">
+                    <p class="text-muted">{{ restaurant.cost }}
+                    <a href="#" class="btn btn-info">See Details</a></p>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="uk-card uk-card-small uk-card-default uk-width-large" uk-grid="masonry: true">
+    <div class="uk-card-media-left uk-cover-container">
+        <img src={{restaurant.image}} alt="" uk-cover class="uk-border-circle">
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <div class="uk-card-badge uk-label">{{ restaurant.cost }} for two</div>
+            <h3 class="uk-card-title">{{ restaurant.name }}</h3>
+            <p>{{ restaurant.locality }}</p>
+        </div>
+    </div>
+</div>
+
     {% endfor %}
 </div>
 {% endblock content %}

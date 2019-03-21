@@ -19,7 +19,7 @@ def home(request):
     length = len(restaurant_array)
 
     restaurants = []
-    for i in range(0, length):
+    for i in range(0, 4):
         restaurant_obj = restaurant_array[i]['restaurant']
         restaurant = {
             'id': restaurant_obj['id'],
@@ -35,7 +35,7 @@ def home(request):
         'restaurants': restaurants
     }
 
-    return render(request, 'DJEats/home.html', context)
+    return render(request, 'DJEats/test.html', context)
 
 
 def details(request):
