@@ -50,27 +50,52 @@ def details(request, restaurant_id=0):
         }
 
     else:
-        url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id={}'
+        detail_url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id={}'
+        review_url = 'https://developers.zomato.com/api/v2.1/reviews?res_id={}'
         header = {
             'user-key': api_key
         }
-        response = requests.get(url.format(
+
+        detail_response = requests.get(detail_url.format(
             restaurant_id), headers=header).json()
 
         restaurant = {
-            'id': response['id'],
-            'name': response['name'],
-            'address': response['location']['address'],
-            'featured_image': response['featured_image'],
-            'avg_rating': int(round((float(response['user_rating']['aggregate_rating'])/5)*100, 2)),
-            'avg_review': response['user_rating']['rating_text'],
-            'no_of_votes': response['user_rating']['votes'],
-            'rating_color': response['user_rating']['rating_color'],
-            'cuisines': response['cuisines']
+            'id': detail_response['id'],
+            'name': detail_response['name'],
+            'address': detail_response['location']['address'],
+            'featured_image': detail_response['featured_image'],
+            'avg_rating': int(round((float(detail_response['user_rating']['aggregate_rating'])/5)*100, 2)),
+            'avg_review': detail_response['user_rating']['rating_text'],
+            'no_of_votes': detail_response['user_rating']['votes'],
+            'rating_color': detail_response['user_rating']['rating_color'],
+            'cuisines': detail_response['cuisines']
         }
+
+        review_response = requests.get(review_url.format(
+            restaurant_id), headers=header).json()
+
+        review_array = review_response['user_reviews']
+        length = len(review_array)
+        reviews = []
+
+        for i in range(0, length):
+            review_obj = review_array[i]['review']
+            review = {
+                'user_name': review_obj['user']['name'],
+                'profile_image': review_obj['user']['profile_image'],
+                'foodie_level': review_obj['user']['foodie_level'],
+                'foodie_color': review_obj['user']['foodie_color'],
+                'timestamp': review_obj['review_time_friendly'],
+                'review_text': review_obj['review_text'],
+                'rating': review_obj['rating'],
+                'rating_text': review_obj['rating_text'],
+                'rating_color': review_obj['rating_color']
+            }
+            reviews.append(review)
 
         context = {
             'restaurant': restaurant,
+            'reviews': reviews,
             'is_restaurant': is_restaurant
         }
 
