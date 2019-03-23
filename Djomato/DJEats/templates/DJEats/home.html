@@ -1,6 +1,8 @@
 {% extends "DJEats/base.html" %} {% load static %} {% block head %}
+<!-- Loads CSS For home.html -->
 <link rel="stylesheet" type="text/css" href="{% static 'DJEats/home.css' %}"> {% endblock head %} {% block content %}
 
+<!-- Jumbotron -->
 <div class="jumbotron bg-dark text-white mt-4 text-center">
     <h1 class="display-4">DJEats in {{location}}</h1>
     <hr class="my-4">
@@ -8,6 +10,7 @@
     </p>
 </div>
 
+<!-- Cards -->
 <div class="container pt-4">
     <div class="card-deck">
         {% for restaurant in restaurants %}

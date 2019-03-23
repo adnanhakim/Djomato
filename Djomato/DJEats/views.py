@@ -38,5 +38,19 @@ def home(request):
     return render(request, 'DJEats/home.html', context)
 
 
-def details(request):
-    return render(request, 'DJEats/details.html')
+def details(request, restaurant_id = 0):
+    
+    is_restaurant = True
+
+    if restaurant_id == 0:
+        is_restaurant = False
+
+    context = {
+        'restaurant_id': restaurant_id,
+        'is_restaurant': is_restaurant
+    }
+
+    if(restaurant_id == 0):
+        return render(request, 'DJEats/details.html', context)
+    else:
+        return render(request, 'DJEats/details.html', context)

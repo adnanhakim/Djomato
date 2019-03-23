@@ -1,6 +1,5 @@
-{% extends "DJEats/base.html" %}
-{% block content %}
-
-
-
-{% endblock content %}
+{% extends "DJEats/base.html" %} {% block content %} {% if is_restaurant %}
+<h1>{{restaurant_id}}</h1>
+{% else %}
+<h1>Invalid Restaurant</h1>
+{% endif %} {% endblock content %}
