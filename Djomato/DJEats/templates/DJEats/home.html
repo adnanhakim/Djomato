@@ -1,6 +1,13 @@
 {% extends "DJEats/base.html" %} {% block content %}
 
-<div class="container">
+<div class="jumbotron bg-dark text-white mt-4">
+    <h1 class="display-4">DJEats in {{location}}</h1>
+    <p class="lead">Check out the top trending restaurants in {{location}}</p>
+    </p>
+</div>
+
+<div class="container pt-4">
+
     <div class="card-deck">
         {% for restaurant in restaurants %}
         <div class="card bg-dark text-white mb-5" style="width: 15rem;">
