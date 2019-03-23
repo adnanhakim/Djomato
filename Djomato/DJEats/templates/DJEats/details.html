@@ -1,5 +1,6 @@
-{% extends "DJEats/base.html" %} {% block content %} {% if is_restaurant %}
-<h1>{{restaurant_id}}</h1>
-{% else %}
-<h1>Invalid Restaurant</h1>
+{% extends "DJEats/base.html" %} {% load static %} {% block head %}
+<!-- Loads CSS For home.html -->
+<link rel="stylesheet" type="text/css" href="{% static 'DJEats/details.css' %}"> {% endblock head %} {% block content %} {% if is_restaurant %} {% else %}
+<h1 align="center">Invalid Restaurant</h1>
+
 {% endif %} {% endblock content %}
