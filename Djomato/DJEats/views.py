@@ -65,7 +65,8 @@ def details(request, restaurant_id=0):
             'avg_rating': int(round((float(response['user_rating']['aggregate_rating'])/5)*100, 2)),
             'avg_review': response['user_rating']['rating_text'],
             'no_of_votes': response['user_rating']['votes'],
-            'rating_color': response['user_rating']['rating_color']
+            'rating_color': response['user_rating']['rating_color'],
+            'cuisines': response['cuisines']
         }
 
         context = {
