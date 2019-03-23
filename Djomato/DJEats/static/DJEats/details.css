@@ -1,3 +1,21 @@
-.invalid_header {
-    text-align: center;
+body {
+    background-color: #232323 !important;
+}
+
+.card-img-overlay .btn {
+    float: right;
+}
+
+.invalid-header {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.rating-text {
+    float: right;
+    padding: 0.5%;
 }

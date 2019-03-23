@@ -7,11 +7,32 @@
 {% endblock head %}
 
 {% block content %}
-
 {% if is_restaurant %}
+<div class="container">
+    <div class="card bg-dark text-white mt-4 mb-5">
+        <img class="card-img-top" src={{restaurant.featured_image}} alt="Card image cap">
+        <div class="card-img-overlay">
+            <a href="#" class="btn btn-danger">Book on Zomato</a>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">{{restaurant.name}}</h3>
+            <p class="card-text">{{restaurant.address}}</p>
+            <p class="rating-text" style="background-color: #{{restaurant.rating_color}}">{{restaurant.rating}}</p>
+            <div class="rating">
+                <a href="#" class="btn btn-primary">{{restaurant.rating}}</a>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
 
 {% else %}
-<h1 align="center">Invalid Restaurant</h1>
+<div class="container">
+    <div class="invalid-header">
+        <h3 class="text-white" style="text-align: center">Invalid Restaurant</h3>
+    </div>
+  </div>
 {% endif %}
 
 {% endblock content %}

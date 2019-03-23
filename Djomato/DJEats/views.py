@@ -12,7 +12,8 @@ def home(request):
     header = {
         'user-key': api_key
     }
-    response = requests.get(url.format(latitude, longitude), headers=header).json()
+    response = requests.get(url.format(
+        latitude, longitude), headers=header).json()
 
     location = response['location']['title']
     restaurant_array = response['nearby_restaurants']
@@ -38,19 +39,41 @@ def home(request):
     return render(request, 'DJEats/home.html', context)
 
 
-def details(request, restaurant_id = 0):
-    
-    is_restaurant = True
+def details(request, restaurant_id=0):
 
+    is_restaurant = True
     if restaurant_id == 0:
         is_restaurant = False
+        context = {
+            'restaurant_id': restaurant_id,
+            'is_restaurant': is_restaurant
+        }
 
-    context = {
-        'restaurant_id': restaurant_id,
-        'is_restaurant': is_restaurant
-    }
+    else:
+        url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id={}'
+        header = {
+            'user-key': api_key
+        }
+        response = requests.get(url.format(
+            restaurant_id), headers=header).json()
+
+        restaurant = {
+            'id': response['id'],
+            'name': response['name'],
+            'address': response['location']['address'],
+            'featured_image': response['featured_image'],
+            'avg_rating': int(round((float(response['user_rating']['aggregate_rating'])/5)*100, 2)),
+            'avg_review': response['user_rating']['rating_text'],
+            'no_of_votes': response['user_rating']['votes'],
+            'rating_color': response['user_rating']['rating_color']
+        }
+
+        context = {
+            'restaurant': restaurant,
+            'is_restaurant': is_restaurant
+        }
 
     if(restaurant_id == 0):
-        return render(request, 'DJEats/details.html', context)
+        return render(request, 'DJEats/test.html', context)
     else:
-        return render(request, 'DJEats/details.html', context)
+        return render(request, 'DJEats/test.html', context)
