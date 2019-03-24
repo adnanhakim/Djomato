@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
-google_maps_api_key = 'AIzaSyAVC4f5Lk2C6d47MLF7gYXrltjuTBdCUqY'
+google_maps_api_key = 'AIzaSyBnJKp9cv96UswwdTKcLf4nImfuxki__zI'
 latitude = 19.284691
 longitude = 72.860687
 
@@ -108,3 +108,4 @@ def details(request, restaurant_id=0):
 
 def profile(request):
     return render(request, 'DJEats/profile.html')
+    

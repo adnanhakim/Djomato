@@ -1,0 +1,30 @@
+{% extends "DJEats/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<!-- Loads CSS For home.html -->
+<link rel="stylesheet" type="text/css" href="{% static 'Users/register.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div class="content-section">
+    <div class="card bg-dark text-white m-3">
+        <div class="card-header">
+            <h5>Join Today</h6>
+        </div>
+        <form class="m-3" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="card-footer text-muted">
+            Already have an account?<a class="ml-2" href="#">Sign In</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
