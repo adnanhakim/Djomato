@@ -6,6 +6,10 @@ body {
     float: right;
 }
 
+.card-link:hover {
+     color: #00BFFF;
+}
+
 .card-deck {
     margin: 0 -15px;
     justify-content: space-between;
@@ -13,6 +17,10 @@ body {
 
 .card-deck .card {
     margin: 0 0 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 11px #898989;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {

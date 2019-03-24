@@ -33,3 +33,16 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+#bookOnZomato {
+    border: 1px groove #CB212C;
+    color: #FFFFFF;
+    background-color: #CB212C;
+    border-radius: 15px 15px 0px 15px;
+    padding: 5.5px;
+}
+
+#bookOnZomato:hover {
+    background-color: #FF0000;
+    border: 1px groove #FF0000;
+}
