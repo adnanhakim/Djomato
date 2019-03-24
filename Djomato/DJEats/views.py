@@ -3,17 +3,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
+google_maps_api_key = 'AIzaSyAVC4f5Lk2C6d47MLF7gYXrltjuTBdCUqY'
 latitude = 19.284691
 longitude = 72.860687
 
 
-def home(request):
+def home(request, lat='19.284691', lng='72.860687'):
     url = 'https://developers.zomato.com/api/v2.1/geocode?lat={}&lon={}'
     header = {
         'user-key': api_key
     }
     response = requests.get(url.format(
-        latitude, longitude), headers=header).json()
+        lat, lng), headers=header).json()
 
     location = response['location']['title']
     restaurant_array = response['nearby_restaurants']
@@ -103,3 +104,7 @@ def details(request, restaurant_id=0):
         return render(request, 'DJEats/test.html', context)
     else:
         return render(request, 'DJEats/test.html', context)
+
+
+def profile(request):
+    return render(request, 'DJEats/profile.html')

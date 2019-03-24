@@ -20,7 +20,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 0 11px #898989;
+    box-shadow: 0 0 11px #00BFFF;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
