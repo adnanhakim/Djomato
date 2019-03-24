@@ -1,0 +1,15 @@
+{% extends "DJEats/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<!-- Loads CSS For home.html -->
+<link rel="stylesheet" type="text/css" href="{% static 'Users/logout.css' %}">
+{% endblock head %}
+
+{% block content %}
+<h3 class="text-white">You have been logged out</h3>
+<small class="text-muted">
+    <a href="{% url 'login' %}">Log In Again</a>
+</small>
+{% endblock content %}

@@ -4,14 +4,14 @@
 
 {% block head %}
 <!-- Loads CSS For home.html -->
-<link rel="stylesheet" type="text/css" href="{% static 'Users/register.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Users/login.css' %}">
 {% endblock head %}
 
 {% block content %}
 <div class="content-section">
     <div class="card bg-dark text-white m-3">
         <div class="card-header">
-            <h5>Join Today</h6>
+            <h5>Log In</h6>
         </div>
         <form class="m-3" method="POST">
             {% csrf_token %}
@@ -19,11 +19,11 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-outline-info" type="submit">Sign In</button>
             </div>
         </form>
         <div class="card-footer text-muted">
-            Already have an account?<a class="ml-2" href="{%url 'login'%}">Sign In</a>
+            Need an account?<a class="ml-2" href="{%url 'register'%}">Sign Up Now</a>
         </div>
     </div>
 </div>
