@@ -1,6 +1,7 @@
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
 google_maps_api_key = 'AIzaSyBnJKp9cv96UswwdTKcLf4nImfuxki__zI'
@@ -40,6 +41,7 @@ def home(request, lat='19.284691', lng='72.860687'):
     return render(request, 'DJEats/home.html', context)
 
 
+@login_required
 def details(request, restaurant_id=0):
 
     is_restaurant = True
