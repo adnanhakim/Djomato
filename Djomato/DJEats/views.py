@@ -4,16 +4,40 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
-google_maps_api_key = 'AIzaSyBnJKp9cv96UswwdTKcLf4nImfuxki__zI'
+temp_api = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
+stolen_api = 'AIzaSyDqIj_SXTf5Z5DgE_cvn5VF9h5NbuaiCbs'
+google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
+temp_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=Naya%20Nagar&key={}'
+google_maps_api_key = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
 latitude = 19.284691
 longitude = 72.860687
 
 
 def home(request, lat='19.284691', lng='72.860687'):
+    lat = 19.284691
+    lng = 72.860687
     url = 'https://developers.zomato.com/api/v2.1/geocode?lat={}&lon={}'
     header = {
         'user-key': api_key
     }
+
+    if 'search' in request.GET:
+        search_query = request.GET['search']
+        if search_query != '':
+            print(search_query)
+            google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={}&key={}'
+            geocoding_result = requests.get(google_maps_url.format(search_query ,temp_api)).json()
+            if geocoding_result['status'] == 'OK':
+                lat = geocoding_result['results'][0]['geometry']['location']['lat']
+                lng = geocoding_result['results'][0]['geometry']['location']['lng']
+                print(lat)
+                print(lng)
+            else:
+                print('Invalid Result')
+
+        else:
+            print('Empty')
+
     response = requests.get(url.format(
         lat, lng), headers=header).json()
 
