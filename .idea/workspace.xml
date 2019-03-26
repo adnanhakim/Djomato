@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a7d570a-12d0-4a3f-a2fe-31548d5cc425" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Djomato/DJEats/static/DJEats/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Djomato/DJEats/static/DJEats/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="9a7d570a-12d0-4a3f-a2fe-31548d5cc425" name="Default Changelist" comment="" />
     <ignored path="C:\Users\Adnan Hakim\PycharmProjects\Djomato\.idea\shelf/" />
     <ignored path="C:\Users\arsh2\PycharmProjects\Djomato\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +13,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/details.html">
+        <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+            <state>
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -28,38 +24,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="612">
+              <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Djomato/DJEats/static/DJEats/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Djomato/DJEats/static/DJEats/details.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+            <state relative-caret-position="357">
+              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -90,14 +65,14 @@
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/jupyter.ipynb" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home_style.css" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/custom.css" />
-        <option value="$PROJECT_DIR$/Djomato/DJEats/views.py" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/static/DJEats/details.css" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/details.html" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/test.html" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/static/DJEats/test.css" />
-        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" />
-        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" />
         <option value="$PROJECT_DIR$/Djomato/DJEats/static/DJEats/home.css" />
+        <option value="$PROJECT_DIR$/Djomato/DJEats/views.py" />
+        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html" />
+        <option value="$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html" />
       </list>
     </option>
   </component>
@@ -113,6 +88,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,19 +141,48 @@
               <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
               <item name="Djomato" type="462c0819:PsiDirectoryNode" />
               <item name="Djomato" type="462c0819:PsiDirectoryNode" />
-              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
               <item name="Djomato" type="462c0819:PsiDirectoryNode" />
               <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Djomato" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Djomato" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,7 +402,35 @@
       <option name="project" value="LOCAL" />
       <updated>1553431168477</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Some more Css">
+      <created>1553432618455</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1553432618455</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Commiting">
+      <created>1553581009724</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1553581009724</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Commiting again">
+      <created>1553594861593</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1553594861593</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Maps">
+      <created>1553599415999</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1553599415999</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -413,8 +446,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.6082949" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.546851" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2749616" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19815668" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3283582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -423,8 +456,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Django" />
-    <MESSAGE value="Added Django again" />
     <MESSAGE value="Initial Page added" />
     <MESSAGE value="Initial Page added (2)" />
     <MESSAGE value="Templates added" />
@@ -446,7 +477,11 @@
     <MESSAGE value="Mess" />
     <MESSAGE value="Mess1" />
     <MESSAGE value="Dont know why0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dont know why0" />
+    <MESSAGE value="Some more Css" />
+    <MESSAGE value="Commiting" />
+    <MESSAGE value="Commiting again" />
+    <MESSAGE value="Maps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maps" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hello.py" />
@@ -483,37 +518,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/custom.css" />
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home_style.css" />
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/static/DJEats/test.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -535,27 +539,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/static/Users/login.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/static/Users/logout.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/static/Users/register.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/templates/Users/login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/templates/Users/logout.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/templates/Users/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/Users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/static/DJEats/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/static/DJEats/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        <state relative-caret-position="-387" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
         </state>
       </provider>
     </entry>
