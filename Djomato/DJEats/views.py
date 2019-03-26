@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
 temp_api = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
+google_static_map_api = 'AIzaSyAt7g-OcW0k9qcG-75Yj3GrLGwLC2dRV3Q'
 stolen_api = 'AIzaSyDqIj_SXTf5Z5DgE_cvn5VF9h5NbuaiCbs'
 google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
 temp_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=Naya%20Nagar&key={}'
@@ -26,7 +27,8 @@ def home(request, lat='19.284691', lng='72.860687'):
         if search_query != '':
             print(search_query)
             google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={}&key={}'
-            geocoding_result = requests.get(google_maps_url.format(search_query ,temp_api)).json()
+            geocoding_result = requests.get(
+                google_maps_url.format(search_query, temp_api)).json()
             if geocoding_result['status'] == 'OK':
                 lat = geocoding_result['results'][0]['geometry']['location']['lat']
                 lng = geocoding_result['results'][0]['geometry']['location']['lng']
@@ -86,6 +88,9 @@ def details(request, restaurant_id=0):
         detail_response = requests.get(detail_url.format(
             restaurant_id), headers=header).json()
 
+        lat = detail_response['location']['latitude']
+        lng = detail_response['location']['longitude']
+
         restaurant = {
             'id': detail_response['id'],
             'name': detail_response['name'],
@@ -120,7 +125,10 @@ def details(request, restaurant_id=0):
             }
             reviews.append(review)
 
+        static_map_url = 'https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=300x300&maptype=roadmap&markers=color:red%7Clabel:R%7C{},{}&key={}'
+
         context = {
+            'static_map_url': static_map_url.format(lat, lng, google_static_map_api),
             'restaurant': restaurant,
             'reviews': reviews,
             'is_restaurant': is_restaurant
@@ -134,4 +142,3 @@ def details(request, restaurant_id=0):
 
 def profile(request):
     return render(request, 'DJEats/profile.html')
-    
