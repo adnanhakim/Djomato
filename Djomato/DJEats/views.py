@@ -91,6 +91,24 @@ def details(request, restaurant_id=0):
         lat = detail_response['location']['latitude']
         lng = detail_response['location']['longitude']
 
+        has_online_delivery_var = detail_response['has_online_delivery']
+        if has_online_delivery_var == 1:
+            has_online_delivery = 'Yes'
+        else:
+            has_online_delivery = 'No'
+ 
+        has_reservation_var = detail_response['is_zomato_book_res']
+        if has_reservation_var == 1:
+            has_reservation = 'Yes'
+        else:
+            has_reservation = 'No'
+
+        has_bogo_offers_var = detail_response['include_bogo_offers']
+        if has_bogo_offers_var == True:
+            has_bogo_offers = 'Yes'
+        else:
+            has_bogo_offers = 'No'
+
         restaurant = {
             'id': detail_response['id'],
             'name': detail_response['name'],
@@ -100,7 +118,11 @@ def details(request, restaurant_id=0):
             'avg_review': detail_response['user_rating']['rating_text'],
             'no_of_votes': detail_response['user_rating']['votes'],
             'rating_color': detail_response['user_rating']['rating_color'],
-            'cuisines': detail_response['cuisines']
+            'cuisines': detail_response['cuisines'],
+            'avg_cost_for_two': detail_response['currency'] + str(detail_response['average_cost_for_two']),
+            'has_online_delivery': has_online_delivery,
+            'has_reservation': has_reservation,
+            'has_bogo_offers': has_bogo_offers
         }
 
         review_response = requests.get(review_url.format(

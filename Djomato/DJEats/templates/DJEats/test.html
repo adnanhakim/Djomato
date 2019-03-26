@@ -26,10 +26,11 @@
                     <div class="card-title">{{restaurant.cuisines}}</div>
                 </div>
                 <div class="card-footer text-muted">
-                    <a id="bookOnZomato" class="card-link" href="#" >Book on Zomato</a>
+                    <a id="bookOnZomato" class="card-link" href="#">Book on Zomato</a>
                 </div>
             </div>
 
+            <!-- Google static map -->
             <div class="card bg-dark text-white">
                 <div class="card-header">
                     <div class="h6">Google Maps</div>
@@ -46,7 +47,6 @@
                 <img class="card-img" src={{restaurant.featured_image}} alt="Card image">
             </div>
 
-
             <!-- Review Header -->
             <div class="card gedf-card bg-dark text-white text-center">
                 <div class="card-body">
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <!--- Reviews start -->
+            <!-- Reviews start -->
             {% for review in reviews %}
             <div class="card gedf-card bg-dark text-white">
                 <div class="card-header">
@@ -82,7 +82,7 @@
             {% endfor %}
             <!-- Reviews end -->
 
-            
+
             <!--- \\\\\\\Post-->
             <div class="card gedf-card">
                 <div class="card-header">
@@ -146,12 +146,12 @@
             </div>
             <!-- Post /////-->
 
-
-
-
+            <!-- Right Side Bar -->
         </div>
         <div class="col-md-3">
-            <div class="card bg-dark text-white">
+
+            <!-- Ratings -->
+            <div class="card gedf-card bg-dark text-white">
                 <div class="card-header">
                     <div class="h5">Rating</div>
                 </div>
@@ -166,6 +166,27 @@
                     No of votes: {{restaurant.no_of_votes}}
                 </div>
             </div>
+
+            <!-- Details -->
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    <div class="h5">Details</div>
+                </div>
+                <div class="card-body">
+                    <div class="h6 text-muted">Average cost for two</div>
+                    <div class="h6">{{restaurant.avg_cost_for_two}}</div>
+                    <hr>
+                    <div class="h6 text-muted">Online Delivery</div>
+                    <div class="h6">{{restaurant.has_online_delivery}}</div>
+                    <hr>
+                    <div class="h6 text-muted">Reservation</div>
+                    <div class="h6">{{restaurant.has_reservation}}</div>
+                    <hr>
+                    <div class="h6 text-muted">BOGO Offers</div>
+                    <div class="h6">{{restaurant.has_bogo_offers}}</div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
