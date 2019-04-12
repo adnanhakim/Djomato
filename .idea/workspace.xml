@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a7d570a-12d0-4a3f-a2fe-31548d5cc425" name="Default Changelist" comment="" />
+    <list default="true" id="9a7d570a-12d0-4a3f-a2fe-31548d5cc425" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="C:\Users\Adnan Hakim\PycharmProjects\Djomato\.idea\shelf/" />
     <ignored path="C:\Users\arsh2\PycharmProjects\Djomato\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="748">
+              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -30,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+            <state relative-caret-position="99">
+              <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1972">
+              <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -434,9 +445,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24880762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -447,7 +458,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2749616" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19815668" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1973466" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3283582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -518,13 +529,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/custom.css" />
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home_style.css" />
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -624,6 +628,13 @@
         <state relative-caret-position="-387" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -631,17 +642,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/views.py">
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="99">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/base.html">
+    <entry file="file://$PROJECT_DIR$/Djomato/DJEats/templates/DJEats/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        <state relative-caret-position="-1972">
+          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
         </state>
       </provider>
     </entry>

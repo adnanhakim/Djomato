@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
 temp_api = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
 google_static_map_api = 'AIzaSyAt7g-OcW0k9qcG-75Yj3GrLGwLC2dRV3Q'
+google_static_map_signature = 'ozeiYbY0r4vZO_a3EQCgSzuNHVM='
 stolen_api = 'AIzaSyDqIj_SXTf5Z5DgE_cvn5VF9h5NbuaiCbs'
 google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
 temp_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=Naya%20Nagar&key={}'
@@ -15,6 +16,12 @@ longitude = 72.860687
 
 
 def home(request, lat='19.284691', lng='72.860687'):
+
+    client_ip = get_ip_address(request)
+    free_geo_ip = 'http://freegeoip.net/json/{}'
+    ip = requests.get(free_geo_ip.format(client_ip)).json()
+    print(ip)
+
     lat = 19.284691
     lng = 72.860687
     url = 'https://developers.zomato.com/api/v2.1/geocode?lat={}&lon={}'
@@ -113,6 +120,7 @@ def details(request, restaurant_id=0):
             'id': detail_response['id'],
             'name': detail_response['name'],
             'address': detail_response['location']['address'],
+            'locality': detail_response['location']['locality_verbose'],
             'featured_image': detail_response['featured_image'],
             'avg_rating': int(round((float(detail_response['user_rating']['aggregate_rating'])/5)*100, 2)),
             'avg_review': detail_response['user_rating']['rating_text'],
@@ -148,9 +156,8 @@ def details(request, restaurant_id=0):
             reviews.append(review)
 
         static_map_url = 'https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=300x300&maptype=roadmap&markers=color:red%7Clabel:R%7C{},{}&key={}'
-
         context = {
-            'static_map_url': static_map_url.format(lat, lng, google_static_map_api),
+            'static_map_url': static_map_url.format(lat, lng, google_static_map_api, google_static_map_signature),
             'restaurant': restaurant,
             'reviews': reviews,
             'is_restaurant': is_restaurant
@@ -164,3 +171,13 @@ def details(request, restaurant_id=0):
 
 def profile(request):
     return render(request, 'DJEats/profile.html')
+
+
+def get_ip_address(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
