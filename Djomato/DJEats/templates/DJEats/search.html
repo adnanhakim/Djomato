@@ -3,15 +3,18 @@
 
 {% block head %}
 <!-- Loads CSS For home.html -->
-<link rel="stylesheet" type="text/css" href="{% static 'DJEats/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'DJEats/search.css' %}">
 {% endblock head %}
 
 {% block content %}
-<!-- Jumbotron -->
 <div class="jumbotron bg-dark text-white mt-4 text-center">
-    <h1 id="Welcome" class="display-4">DJEats in {{location}}</h1>
+    <h1 id="Welcome" class="display-4">Search for a restaurant</h1>
     <hr class="my-4">
-    <p class="lead">Check out the top trending restaurants in {{location}}</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
 </div>
 
 <!-- Cards -->
@@ -34,5 +37,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock content %}

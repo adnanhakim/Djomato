@@ -2,6 +2,7 @@ import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .forms import RestaurantForm
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
 temp_api = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
@@ -15,15 +16,8 @@ latitude = 19.284691
 longitude = 72.860687
 
 
-def home(request, lat='19.284691', lng='72.860687'):
+def home(request, lat='19.107022', lng='72.837201'):
 
-    client_ip = get_ip_address(request)
-    free_geo_ip = 'http://freegeoip.net/json/{}'
-    ip = requests.get(free_geo_ip.format(client_ip)).json()
-    print(ip)
-
-    lat = 19.284691
-    lng = 72.860687
     url = 'https://developers.zomato.com/api/v2.1/geocode?lat={}&lon={}'
     header = {
         'user-key': api_key
@@ -47,8 +41,7 @@ def home(request, lat='19.284691', lng='72.860687'):
         else:
             print('Empty')
 
-    response = requests.get(url.format(
-        lat, lng), headers=header).json()
+    response = requests.get(url.format(lat, lng), headers=header).json()
 
     location = response['location']['title']
     restaurant_array = response['nearby_restaurants']
@@ -103,7 +96,7 @@ def details(request, restaurant_id=0):
             has_online_delivery = 'Yes'
         else:
             has_online_delivery = 'No'
- 
+
         has_reservation_var = detail_response['is_zomato_book_res']
         if has_reservation_var == 1:
             has_reservation = 'Yes'
@@ -173,6 +166,48 @@ def profile(request):
     return render(request, 'DJEats/profile.html')
 
 
+def search(request):
+
+    url = 'https://developers.zomato.com/api/v2.1/search?entity_id=3&entity_type=city&q={}'
+    header = {
+        'user-key': api_key
+    }
+
+    restaurants = []
+    if request.method == 'POST':
+        form = RestaurantForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            address = form.cleaned_data['address']
+            print(name, address)
+            response = requests.get(url.format(name), headers=header).json()
+
+            restaurant_array = response['restaurants']
+            length = len(restaurant_array)
+
+            
+            for i in range(0, length):
+                restaurant_obj = restaurant_array[i]['restaurant']
+                restaurant = {
+                    'id': restaurant_obj['id'],
+                    'name': restaurant_obj['name'],
+                    'locality': restaurant_obj['location']['locality'],
+                    'image': restaurant_obj['thumb'],
+                    'cost': restaurant_obj['currency'] + str(restaurant_obj['average_cost_for_two'])
+                }
+                print(restaurant)
+                restaurants.append(restaurant)
+
+    else:
+        form = RestaurantForm()
+
+    context = {
+        'form': form,
+        'restaurants': restaurants
+    }
+    return render(request, 'DJEats/search.html', context)
+
+
 def get_ip_address(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -180,4 +215,3 @@ def get_ip_address(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
-
