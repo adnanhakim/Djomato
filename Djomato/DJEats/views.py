@@ -36,7 +36,7 @@ def home(request, lat='19.107022', lng='72.837201'):
                 print(lat)
                 print(lng)
             else:
-                print('Invalid Result')
+                print(geocoding_result['error_message'])
 
         else:
             print('Empty')
@@ -168,7 +168,7 @@ def profile(request):
 
 def search(request):
 
-    url = 'https://developers.zomato.com/api/v2.1/search?entity_id=3&entity_type=city&q={}'
+    url = 'https://developers.zomato.com/api/v2.1/search?entity_id=3&entity_type=city&q={}&lat={}&lon={}&radius={}&sort=real_distance'
     header = {
         'user-key': api_key
     }
@@ -178,9 +178,34 @@ def search(request):
         form = RestaurantForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
+            name = name.replace(' ', '%20')
             address = form.cleaned_data['address']
+            address = address.replace(' ', '%20')
             print(name, address)
-            response = requests.get(url.format(name), headers=header).json()
+
+            lat = ''
+            lng = ''
+            radius = ''
+
+            if address != None:
+                print(address)
+                google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={}&key={}'
+                print(google_maps_url.format(address, stolen_api))
+                geocoding_result = requests.get(google_maps_url.format(address, temp_api)).json()
+                if geocoding_result['status'] == 'OK':
+                    lat = geocoding_result['results'][0]['geometry']['location']['lat']
+                    lng = geocoding_result['results'][0]['geometry']['location']['lng']
+                    radius = 2000
+                    print(lat)
+                    print(lng)
+                else:
+                    print(geocoding_result['error_message'])
+                    
+            else:
+                print('Empty')
+
+            print(url.format(name, lat, lng, radius))
+            response = requests.get(url.format(name, lat, lng, radius), headers=header).json()
 
             restaurant_array = response['restaurants']
             length = len(restaurant_array)
@@ -195,7 +220,6 @@ def search(request):
                     'image': restaurant_obj['thumb'],
                     'cost': restaurant_obj['currency'] + str(restaurant_obj['average_cost_for_two'])
                 }
-                print(restaurant)
                 restaurants.append(restaurant)
 
     else:

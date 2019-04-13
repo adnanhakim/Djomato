@@ -2,6 +2,14 @@ body {
     background-color: #232323 !important;
 }
 
+.card-link {
+    float: right;
+}
+
+.card-link:hover {
+    color: #00BFFF;
+}
+
 .card-deck {
     margin: 0 -15px;
     justify-content: space-between;
@@ -9,6 +17,11 @@ body {
 
 .card-deck .card {
     margin: 0 0 1rem;
+}
+
+.jumbotron .form {
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .card:hover {
