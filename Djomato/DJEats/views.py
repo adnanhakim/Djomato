@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import RestaurantForm
 
 api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
-temp_api = 'AIzaSyCRHl0QPeDZp2bVVaj1Oq2z9UxZyoF-cSU'
-google_static_map_api = 'AIzaSyAt7g-OcW0k9qcG-75Yj3GrLGwLC2dRV3Q'
+temp_api = 'AIzaSyAVSkXWHY3u1278BvbZwkO8vV2oMVDq82A'
+google_static_map_api = 'AIzaSyAVSkXWHY3u1278BvbZwkO8vV2oMVDq82A'
 google_static_map_signature = 'ozeiYbY0r4vZO_a3EQCgSzuNHVM='
 stolen_api = 'AIzaSyDqIj_SXTf5Z5DgE_cvn5VF9h5NbuaiCbs'
 google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
