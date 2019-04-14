@@ -109,6 +109,12 @@ def details(request, restaurant_id=0):
         else:
             has_bogo_offers = 'No'
 
+        if (float(detail_response['user_rating']['aggregate_rating'])/5)*100 < 90:
+            rating_color = detail_response['user_rating']['rating_color']
+        else:
+            rating_color = '13FF00'
+
+
         restaurant = {
             'id': detail_response['id'],
             'name': detail_response['name'],
@@ -118,7 +124,7 @@ def details(request, restaurant_id=0):
             'avg_rating': int(round((float(detail_response['user_rating']['aggregate_rating'])/5)*100, 2)),
             'avg_review': detail_response['user_rating']['rating_text'],
             'no_of_votes': detail_response['user_rating']['votes'],
-            'rating_color': detail_response['user_rating']['rating_color'],
+            'rating_color': rating_color,
             'cuisines': detail_response['cuisines'],
             'avg_cost_for_two': detail_response['currency'] + str(detail_response['average_cost_for_two']),
             'has_online_delivery': has_online_delivery,
@@ -135,6 +141,12 @@ def details(request, restaurant_id=0):
 
         for i in range(0, length):
             review_obj = review_array[i]['review']
+
+            if review_obj['rating_text'] != 'Insane!':
+                rating_color = review_obj['rating_color']
+            else:
+                rating_color = '13FF00'
+
             review = {
                 'user_name': review_obj['user']['name'],
                 'profile_image': review_obj['user']['profile_image'],
@@ -144,7 +156,7 @@ def details(request, restaurant_id=0):
                 'review_text': review_obj['review_text'],
                 'rating': review_obj['rating'],
                 'rating_text': review_obj['rating_text'],
-                'rating_color': review_obj['rating_color']
+                'rating_color': rating_color
             }
             reviews.append(review)
 

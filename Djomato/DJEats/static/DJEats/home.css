@@ -24,6 +24,15 @@ body {
     border: 0.65px groove #000000;
     transition: all 200ms ease-in;
     transform: scale(1.02);
+    animation: pulsate 1s ease-out infinite;
+}
+
+@-webkit-keyframes pulsate {
+    0%   { box-shadow: 0 0 11px rgb(0, 191, 255, 10); }
+    25%   { box-shadow: 0 0 13px rgb(0, 191, 255, 25); }
+    50%  { box-shadow: 0 0 15px rgb(0, 191, 255, 50); }
+    75%  { box-shadow: 0 0 13px rgb(0, 191, 255, 75); }
+    100% { box-shadow: 0 0 11px rgb(0, 191, 255, 100); }
 }
 
 #Welcome {
