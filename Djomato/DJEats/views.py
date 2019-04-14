@@ -185,6 +185,7 @@ def search(request):
         'user-key': api_key
     }
 
+    message = ''
     restaurants = []
     if request.method == 'POST':
         form = RestaurantForm(request.POST)
@@ -198,6 +199,7 @@ def search(request):
             lat = ''
             lng = ''
             radius = ''
+        
 
             if address != None:
                 print(address)
@@ -211,19 +213,23 @@ def search(request):
                     print(lat)
                     print(lng)
                 else:
-                    print(geocoding_result['error_message'])
+                    print('Not found')
+                    message = 'Address not found'
                     
             else:
                 print('Empty')
 
             print(url.format(name, lat, lng, radius))
             response = requests.get(url.format(name, lat, lng, radius), headers=header).json()
-
+            print(response)
             restaurant_array = response['restaurants']
             length = len(restaurant_array)
 
+            if response['results_found'] == 0:
+                message = 'Restaurant not found'
             
             for i in range(0, length):
+                print('Entered for')
                 restaurant_obj = restaurant_array[i]['restaurant']
                 restaurant = {
                     'id': restaurant_obj['id'],
@@ -237,9 +243,11 @@ def search(request):
     else:
         form = RestaurantForm()
 
+    print(message)
     context = {
         'form': form,
-        'restaurants': restaurants
+        'restaurants': restaurants,
+        'message': message
     }
     return render(request, 'DJEats/search.html', context)
 

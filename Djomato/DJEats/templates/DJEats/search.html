@@ -8,6 +8,13 @@
 {% endblock head %}
 
 {% block content %}
+
+{% if message %}
+<div class="alert alert-danger">
+    {{message}}
+</div>
+{% endif %}
+
 <div class="jumbotron bg-dark text-white mt-4">
     <h1 id="Welcome" class="display-4  text-center">Search for a restaurant</h1>
     <hr class="my-4">
