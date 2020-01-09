@@ -1,15 +1,12 @@
-{% extends "DJEats/base.html" %}
-{% load crispy_forms_tags %}
-{% load static %}
-
+{% extends "DJEats/base.html" %} {% load crispy_forms_tags %} {% load static %}
 {% block head %}
 <!-- Loads CSS For home.html -->
-<link rel="stylesheet" type="text/css" href="{% static 'DJEats/search.css' %}">
-{% endblock head %}
-
-{% block content %}
-
-{% if message %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'DJEats/search.css' %}"
+/>
+{% endblock head %} {% block content %} {% if message %}
 <div class="alert alert-danger">
     {{message}}
 </div>
@@ -17,10 +14,9 @@
 
 <div class="jumbotron bg-dark text-white mt-4">
     <h1 id="Welcome" class="display-4  text-center">Search for a restaurant</h1>
-    <hr class="my-4">
+    <hr class="my-4" />
     <form method="POST" class="form">
-        {% csrf_token %}
-        {{ form|crispy }}
+        {% csrf_token %} {{ form|crispy }}
         <button type="submit" class="btn btn-info">Submit</button>
     </form>
 </div>
@@ -30,7 +26,11 @@
     <div class="card-deck">
         {% for restaurant in restaurants %}
         <div class="card bg-dark text-white mb-5" style="width: 15rem;">
-            <img class="card-img-top" src={{restaurant.image}} alt="Card image caption">
+            <img
+                class="card-img-top"
+                src="{{restaurant.image}}"
+                alt="Card image caption"
+            />
             <div class="card-body">
                 <h5 class="card-title">{{restaurant.name}}</h5>
                 <p class="card-subtitle text-muted">{{restaurant.locality}}</p>
@@ -38,7 +38,11 @@
             <div class="card-footer text-muted">
                 <p class="card-text">
                     {{restaurant.cost}} for two
-                    <a href="http://127.0.0.1:8000/details/{{restaurant.id}}" class="card-link">See Details</a>
+                    <a
+                        href="http://127.0.0.1:8000/details/{{restaurant.id}}"
+                        class="card-link"
+                        >See Details</a
+                    >
                 </p>
             </div>
         </div>

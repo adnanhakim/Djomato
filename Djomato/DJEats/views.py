@@ -4,19 +4,16 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import RestaurantForm
 
-api_key = 'cc74cee4a73688e98909b2e1d59cbfd6'
-temp_api = 'AIzaSyAVSkXWHY3u1278BvbZwkO8vV2oMVDq82A'
-google_static_map_api = 'AIzaSyAVSkXWHY3u1278BvbZwkO8vV2oMVDq82A'
-google_static_map_signature = 'ozeiYbY0r4vZO_a3EQCgSzuNHVM='
-stolen_api = 'AIzaSyDqIj_SXTf5Z5DgE_cvn5VF9h5NbuaiCbs'
+api_key = 'YOUR_ZOMATO_API_KEY'
+google_static_map_api = 'YOUR_GOOGLE_STATIC_MAP_API'
+google_static_map_signature = 'YOUR_GOOGLE_STATIC_MAP_SIGNATURE'
 google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
-temp_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=Naya%20Nagar&key={}'
-google_maps_api_key = 'AIzaSyDxf4re_Jtg62K09OUJ7Bp_WNYF7NDSXgE'
-latitude = 19.284691
-longitude = 72.860687
+google_maps_api_key = 'YOUR_GOOGLE_MAPS_GEOCODE_API_KEY'
+latitude = 'YOUR_DEFAULT_LATITUDE_AS_NUMBER'
+longitude = 'YOUR_DEFAULT_LONGITUDE_AS_NUMBER'
 
 
-def home(request, lat='19.107022', lng='72.837201'):
+def home(request, lat=latitude, lng=longitude):
 
     url = 'https://developers.zomato.com/api/v2.1/geocode?lat={}&lon={}'
     header = {
@@ -29,7 +26,7 @@ def home(request, lat='19.107022', lng='72.837201'):
             print(search_query)
             google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={}&key={}'
             geocoding_result = requests.get(
-                google_maps_url.format(search_query, temp_api)).json()
+                google_maps_url.format(search_query, google_maps_api_key)).json()
             if geocoding_result['status'] == 'OK':
                 lat = geocoding_result['results'][0]['geometry']['location']['lat']
                 lng = geocoding_result['results'][0]['geometry']['location']['lng']
@@ -204,8 +201,7 @@ def search(request):
             if address != None:
                 print(address)
                 google_maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={}&key={}'
-                print(google_maps_url.format(address, stolen_api))
-                geocoding_result = requests.get(google_maps_url.format(address, temp_api)).json()
+                geocoding_result = requests.get(google_maps_url.format(address, api_key)).json()
                 if geocoding_result['status'] == 'OK':
                     lat = geocoding_result['results'][0]['geometry']['location']['lat']
                     lng = geocoding_result['results'][0]['geometry']['location']['lng']
